@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Fragrancy | Perfumaria de Nicho</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS (ESTILO) --- */
+        :root {
+            --gold: #D4AF37;
+            --black: #1a1a1a;
+            --dark-gray: #333;
+            --light-gray: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--white);
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            background-color: var(--gold);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            right: -10px;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1595429035839-c99c298ffdde?q=80&w=1964&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b59026;
+        }
+
+        /* Products Section */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--black);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #eee;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-brand {
+            color: var(--gold);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 5px;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .product-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--black);
+            color: var(--black);
+            padding: 10px 20px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content p {
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+
+        .payments {
+            margin-top: 20px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Notification Toast */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: var(--black);
+            color: #fff;
+            text-align: center;
+            border-radius: 2px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            font-size: 15px;
+        }
+
+        #toast.show {
+            visibility: visible;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+
+        @keyframes fadein {
+            from {bottom: 0; opacity: 0;}
+            to {bottom: 30px; opacity: 1;}
+        }
+
+        @keyframes fadeout {
+            from {bottom: 30px; opacity: 1;}
+            to {bottom: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Dream Fragrancy</a>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#loja">Perfumes</a></li>
+                <li><a href="#">Marcas</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon" onclick="alert('O seu carrinho está à espera!')">
+            🛒 <span class="cart-count" id="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Desperte os Seus Sentidos</h1>
+        <p>Perfumaria de nicho exclusiva em Portugal.</p>
+        <a href="#loja" class="btn">Ver Coleção Exclusiva</a>
+    </section>
+
+    <div class="container" id="loja">
+        <h2 class="section-title">Coleção de Sonho</h2>
+        <div class="products-grid" id="products-grid">
+            </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Dream Fragrancy</h3>
+            <p>Rua das Flores, 123 - Lisboa, Portugal</p>
+            <p>Email: contacto@dreamfragrancy.pt</p>
+            <div class="payments">
+                Pagamentos Aceites: MB Way | Multibanco | Visa
+            </div>
+            <p style="margin-top: 20px; font-size: 0.8rem;">&copy; 2024 Dream Fragrancy. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="toast">Produto adicionado ao carrinho!</div>
+
+    <script>
+        // Dados dos Perfumes (Baseado no que criámos)
+        const products = [
+            {
+                id: 1,
+                name: "Velvet Santal",
+                brand: "Noir & Bois",
+                price: 98.00,
+                desc: "Sândalo cremoso com um toque de camurça e figo.",
+                image: "https://images.unsplash.com/photo-1594035910387-fea4779426e9?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 2,
+                name: "Aurora Boreal",
+                brand: "Lumina Essence",
+                price: 78.00,
+                desc: "Hortelã, bergamota congelada e almíscar branco.",
+                image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 3,
+                name: "Rosa Nobre",
+                brand: "Petales de Rêve",
+                price: 105.00,
+                desc: "A rainha das flores com pimenta preta moderna.",
+                image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 4,
+                name: "Vanilla Smoke",
+                brand: "Alchemy Lab",
+                price: 120.00,
+                desc: "Baunilha de Madagáscar defumada e tabaco doce.",
+                image: "https://images.unsplash.com/photo-1615160863397-d6153920612c?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 5,
+                name: "Ocean Soul",
+                brand: "Lumina Essence",
+                price: 82.00,
+                desc: "Notas de sal marinho, algas e madeira flutuante.",
+                image: "https://images.unsplash.com/photo-1585218356058-208947f6368d?q=80&w=600&auto=format&fit=crop"
+            },
+            {
+                id: 6,
+                name: "Gold Leather",
+                brand: "Noir & Bois",
+                price: 135.00,
+                desc: "Couro italiano rico, açafrão e âmbar dourado.",
+                image: "https://images.unsplash.com/photo-1512777576255-a876a0a030f7?q=80&w=600&auto=format&fit=crop"
+            }
+        ];
+
+        // Função para carregar os produtos no HTML
+        function loadProducts() {
+            const grid = document.getElementById('products-grid');
+            
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.classList.add('product-card');
+
+                // Formatar preço para o estilo PT (98,00 €)
+                const priceFormatted = product.price.toFixed(2).replace('.', ',') + ' €';
+
+                card.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" class="product-img">
+                    <div class="product-info">
+                        <div>
+                            <p class="product-brand">${product.brand}</p>
+                            <h3 class="product-name">${product.name}</h3>
+                            <p class="product-desc">${product.desc}</p>
+                        </div>
+                        <div>
+                            <span class="product-price">${priceFormatted}</span>
+                            <button class="btn-outline" onclick="addToCart('${product.name}')">Adicionar ao Carrinho</button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Carrinho Simples
+        let cartCount = 0;
+
+        function addToCart(productName) {
+            cartCount++;
+            document.getElementById('cart-count').innerText = cartCount;
+            
+            // Mostrar notificação (Toast)
+            const toast = document.getElementById("toast");
+            toast.innerText = `${productName} adicionado ao carrinho!`;
+            toast.className = "show";
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+        }
+
+        // Iniciar a loja quando a página carrega
+        window.onload = loadProducts;
+    </script>
+</body>
+</html>
