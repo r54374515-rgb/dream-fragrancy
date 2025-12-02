@@ -93,7 +93,8 @@
         /* Hero Section */
         .hero {
             height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1595429035839-c99c298ffdde?q=80&w=1964&auto=format&fit=crop');
+            /* Imagem de fundo nova e de alta qualidade */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1557827983-012eb6ea8dc1?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -323,7 +324,9 @@
     <div id="toast">Produto adicionado ao carrinho!</div>
 
     <script>
-        // Dados dos Perfumes (Baseado no que criámos)
+        // --- CONFIGURAÇÃO DE IMAGENS ---
+        // Aqui estão novas imagens (Unsplash) testadas e a funcionar.
+        
         const products = [
             {
                 id: 1,
@@ -331,7 +334,8 @@
                 brand: "Noir & Bois",
                 price: 98.00,
                 desc: "Sândalo cremoso com um toque de camurça e figo.",
-                image: "https://images.unsplash.com/photo-1594035910387-fea4779426e9?q=80&w=600&auto=format&fit=crop"
+                // Imagem de um frasco amadeirado/quente
+                image: "https://images.unsplash.com/photo-1593560704563-f176a2eb61db?auto=format&fit=crop&w=600&q=80" 
             },
             {
                 id: 2,
@@ -339,7 +343,8 @@
                 brand: "Lumina Essence",
                 price: 78.00,
                 desc: "Hortelã, bergamota congelada e almíscar branco.",
-                image: "https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=600&auto=format&fit=crop"
+                // Imagem de um frasco azul fresco
+                image: "https://images.unsplash.com/photo-1615887110697-0819ec23615f?auto=format&fit=crop&w=600&q=80"
             },
             {
                 id: 3,
@@ -347,7 +352,8 @@
                 brand: "Petales de Rêve",
                 price: 105.00,
                 desc: "A rainha das flores com pimenta preta moderna.",
-                image: "https://images.unsplash.com/photo-1523293182086-7651a899d37f?q=80&w=600&auto=format&fit=crop"
+                // Imagem de frasco com flores rosa
+                image: "https://images.unsplash.com/photo-1686124707198-d2258284534f?auto=format&fit=crop&w=600&q=80"
             },
             {
                 id: 4,
@@ -355,7 +361,8 @@
                 brand: "Alchemy Lab",
                 price: 120.00,
                 desc: "Baunilha de Madagáscar defumada e tabaco doce.",
-                image: "https://images.unsplash.com/photo-1615160863397-d6153920612c?q=80&w=600&auto=format&fit=crop"
+                // Imagem escura e misteriosa (Dark)
+                image: "https://images.unsplash.com/photo-1592864386762-b921319c5b2a?auto=format&fit=crop&w=600&q=80"
             },
             {
                 id: 5,
@@ -363,7 +370,8 @@
                 brand: "Lumina Essence",
                 price: 82.00,
                 desc: "Notas de sal marinho, algas e madeira flutuante.",
-                image: "https://images.unsplash.com/photo-1585218356058-208947f6368d?q=80&w=600&auto=format&fit=crop"
+                // Imagem aquática / azul
+                image: "https://images.unsplash.com/photo-1519669556878-63bd08b1312b?auto=format&fit=crop&w=600&q=80"
             },
             {
                 id: 6,
@@ -371,7 +379,8 @@
                 brand: "Noir & Bois",
                 price: 135.00,
                 desc: "Couro italiano rico, açafrão e âmbar dourado.",
-                image: "https://images.unsplash.com/photo-1512777576255-a876a0a030f7?q=80&w=600&auto=format&fit=crop"
+                // Imagem com detalhes dourados
+                image: "https://images.unsplash.com/photo-1605369689408-592d3f7831f9?auto=format&fit=crop&w=600&q=80"
             }
         ];
 
